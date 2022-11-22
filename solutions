@@ -1,0 +1,807 @@
+
+Emmanuel@Carbone-Station MINGW64 /
+$ ls
+LICENSE.txt        cmd/  git-bash.exe*  proc/         unins000.exe*
+ReleaseNotes.html  dev/  git-cmd.exe*   tmp/          unins000.msg
+bin/               etc/  mingw64/       unins000.dat  usr/
+
+Emmanuel@Carbone-Station MINGW64 /
+$ mkdir labs-IH
+mkdir: cannot create directory ‘labs-IH’: Permission denied
+
+Emmanuel@Carbone-Station MINGW64 /
+$ cd
+
+Emmanuel@Carbone-Station MINGW64 ~
+$ cd
+
+Emmanuel@Carbone-Station MINGW64 ~
+$ mk labs-IH
+bash: mk: command not found
+
+Emmanuel@Carbone-Station MINGW64 ~
+$ mkdir labsIH
+
+Emmanuel@Carbone-Station MINGW64 ~
+$ cd labsIH
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ git clone https://github.com/eumii/lab-bash.git
+Cloning into 'lab-bash'...
+remote: Enumerating objects: 40, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 40 (delta 14), reused 11 (delta 11), pack-reused 17
+Receiving objects: 100% (40/40), 11.61 KiB | 1.93 MiB/s, done.
+Resolving deltas: 100% (14/14), done.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ ls lab-bash
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ cd lab-bash
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ echo "Hello world !"
+Hello world !
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ mkdir new_dir
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ rmdir new_dir
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt
+cp: missing destination file operand after 'sed.txt'
+Try 'cp --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed
+cp: missing destination file operand after 'sed'
+Try 'cp --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt
+cp: missing destination file operand after 'sed.txt'
+Try 'cp --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp  sed.txt
+cp: missing destination file operand after 'sed.txt'
+Try 'cp --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options to
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attr
+      --backup[=CONTROL]       make a backup of each existing destinat
+  -b                           like --backup but does not accept an ar
+      --copy-contents          copy contents of special files when rec
+  -d                           same as --no-dereference --preserve=lin
+  -f, --force                  if an existing destination file cannot
+                                 opened, remove it and try again (this
+                                 is ignored when the -n option is also
+  -i, --interactive            prompt before overwrite (overrides a pr
+                                  option)
+  -H                           follow command-line symbolic links in S
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (over
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,times
+      --preserve[=ATTR_LIST]   preserve the specified attributes (defa
+                                 mode,ownership,timestamps), if possib
+                                 additional attributes: context, links
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTO
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file b
+                                 attempting to open it (contrast with
+      --sparse=WHEN            control creation of sparse files. See b
+      --strip-trailing-slashes  remove any trailing slashes from each
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIR
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destina
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then se
+                                 SELinux or SMACK security context to
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse
+file whenever the SOURCE file contains a long enough sequence of zero
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, wher
+data blocks are copied only when modified.  If this is not possible th
+fails, or if --reflink=auto is specified, fall back to a standard copy
+Use --reflink=never to ensure a standard copy is performed.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SU
+The version control method may be selected via the --backup option or
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and back
+options are given and SOURCE and DEST are the same name for an existin
+regular file.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/cp>
+or available locally via: info '(coreutils) cp invocation'
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ^C
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt
+cp: missing destination file operand after 'sed.txt'
+Try 'cp --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt... [lorem]... [lorem-copy]...
+cp: target '[lorem-copy]...' is not a directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt... [lorem]... -t [lorem-copy]...
+cp: failed to access '[lorem-copy]...': No such file or directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt -t
+cp: option requires an argument -- t
+Try 'cp --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt... [lorem]... [-t][lorem-copy]
+cp: target '[-t][lorem-copy]' is not a directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ mkdir lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt... [lorem]... -t[lorem-copy]
+cp: failed to access '[lorem-copy]': No such file or directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem-copy/  lorem.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ mv sed.txt lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem-copy/  lorem.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ ls
+dummy_file.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem-copy/  lorem.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem/lorem-copy (m
+$ ls
+sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem/lorem-copy (m
+$ cp lorem-copy ../../
+cp: cannot stat 'lorem-copy': No such file or directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem/lorem-copy (m
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp lorem-copy ../
+cp: -r not specified; omitting directory 'lorem-copy'
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ ls
+dummy_file.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cp -r lorem/lorem-copy
+cp: missing destination file operand after 'lorem/lorem-copy'
+Try 'cp --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ rmdir lorem-copy
+rmdir: failed to remove 'lorem-copy': Directory not empty
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ rmdir -r lorem-copy
+rmdir: unknown option -- r
+Try 'rmdir --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem-copy/  lorem.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ rmdir -f lorem-copy
+rmdir: unknown option -- f
+Try 'rmdir --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ rm -f lorem-copy
+rm: cannot remove 'lorem-copy': Is a directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem/lorem-copy (m
+$ ls
+sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem/lorem-copy (m
+$ mv sed.txt lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem/lorem-copy (m
+$ ls
+lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem/lorem-copy (m
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ rm lorem-copy -rf
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd lorem
+bash: cd: lorem: Not a directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ ls
+dummy_file.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ pwd
+/c/Users/Emmanuel/labsIH/lab-bash/lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp at.txt lorem-copy; cp at.txte lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ ls
+dummy_file.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ git clone https://github.com/eumii/lab-bash.git
+Cloning into 'lab-bash'...
+remote: Enumerating objects: 40, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 40 (delta 14), reused 11 (delta 11), pack-reused 17
+Receiving objects: 100% (40/40), 11.61 KiB | 5.81 MiB/s, done.
+Resolving deltas: 100% (14/14), done.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lab-bash/  lorem/  lorem-copy/  outputs/  readme.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lab-bash
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem (mas
+$ ls
+at.txt  at.txte  lorem.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem (mas
+$ echo "hello world !"
+hello world !
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem (mas
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lab-bash/  lorem/  lorem-copy/  outputs/  readme.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem-copy  lorem.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ ls
+lab-bash/
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ cd lab-bash
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lab-bash/  lorem/  lorem-copy/  outputs/  readme.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem  lorem-copy  lorem.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ ls
+lab-bash/
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ cd lab-bash
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lab-bash
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem (mas
+$ ls
+at.txt  at.txte  lorem.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem (mas
+$ cp sed.txt lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem (mas
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem-copy
+$ ls
+dummy_file.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem-copy
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem (mas
+$ ls
+at.txt  at.txte  lorem-copy  lorem.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash/lorem (mas
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lab-bash (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ rm lab-bash -r
+rm: remove write-protected regular file 'lab-bash/.git/objects/pack/paeda20a2850eb74f6078711669f38c297d.idx'? y
+rm: remove write-protected regular file 'lab-bash/.git/objects/pack/paeda20a2850eb74f6078711669f38c297d.pack'? yes
+rm: remove write-protected regular file 'lab-bash/lab-bash/.git/objectx'?
+rm: remove write-protected regular file 'lab-bash/lab-bash/.git/objectck'?
+rm: cannot remove 'lab-bash/lab-bash/.git/objects/pack': Directory not
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ ls
+lab-bash/
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ rm lab-bash -r
+rm: remove write-protected regular file 'lab-bash/lab-bash/.git/objectx'?
+rm: remove write-protected regular file 'lab-bash/lab-bash/.git/objectck'?
+rm: cannot remove 'lab-bash/lab-bash/.git/objects/pack': Directory not
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ rm lab-bash -rf
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ ls
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ git clone https://github.com/eumii/lab-bash.git
+Cloning into 'lab-bash'...
+remote: Enumerating objects: 40, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 40 (delta 14), reused 11 (delta 11), pack-reused 17
+Receiving objects: 100% (40/40), 11.61 KiB | 5.81 MiB/s, done.
+Resolving deltas: 100% (14/14), done.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ ls
+lab-bash/
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH
+$ cd lab-bash
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cp sed.txt lorem-copy
+cp: cannot stat 'sed.txt': No such file or directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ ls
+dummy_file.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem-copy  lorem.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt lorem-copy/
+cp: failed to access 'lorem-copy/': Not a directory
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt
+cp: missing destination file operand after 'sed.txt'
+Try 'cp --help' for more information.
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options to
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attr
+      --backup[=CONTROL]       make a backup of each existing destinat
+  -b                           like --backup but does not accept an ar
+      --copy-contents          copy contents of special files when rec
+  -d                           same as --no-dereference --preserve=lin
+  -f, --force                  if an existing destination file cannot
+                                 opened, remove it and try again (this
+                                 is ignored when the -n option is also
+  -i, --interactive            prompt before overwrite (overrides a prn
+                                  option)
+  -H                           follow command-line symbolic links in S
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (over
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,times
+      --preserve[=ATTR_LIST]   preserve the specified attributes (defa
+                                 mode,ownership,timestamps), if possib
+                                 additional attributes: context, links
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTO
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file b
+                                 attempting to open it (contrast with
+      --sparse=WHEN            control creation of sparse files. See b
+      --strip-trailing-slashes  remove any trailing slashes from each
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIR
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destina
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then se
+                                 SELinux or SMACK security context to
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse
+file whenever the SOURCE file contains a long enough sequence of zero
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, wher
+data blocks are copied only when modified.  If this is not possible th
+fails, or if --reflink=auto is specified, fall back to a standard copy
+Use --reflink=never to ensure a standard copy is performed.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SU
+The version control method may be selected via the --backup option or
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and back
+options are given and SOURCE and DEST are the same name for an existin
+regular file.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/cp>
+or available locally via: info '(coreutils) cp invocation'
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt /../../lorem-copy
+cp: cannot create regular file '/../../lorem-copy': Permission denied
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp sed.txt ../lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ ls
+dummy_file.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ ls
+at.txt  at.txte  lorem-copy  lorem.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cp at.txt ../lorem-copy ; cp at.txte ../lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ ls
+exercices/  inputs/  lorem/  lorem-copy/  outputs/  readme.md
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ ls
+at.txt  at.txte  dummy_file.txt  sed.txt
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cat sed.txt
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cat at.txt ; cat lorem.txt
+At vero eos ET accusamus ET iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+deleniti atque corrupti quos dolores ET quas molestias excepturi sint occaecati cupiditate non
+provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum ET dolorum fuga.
+Et harum quidem rerum facilis est ET expedita distinctio.
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+Temporibus autem quibusdam ET aut officiis debitis aut rerum necessitatibus saepe eveniET
+ut ET voluptates repudiandae sint ET molestiae non recusandae.
+Itaque earum rerum hic tenETur a sapiente delectus, ut aut reiciendis voluptatibus maiores
+alias consequatur aut perferendis doloribus asperiores repellat
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem (master)
+$ cd ..
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash (master)
+$ cd lorem-copy
+
+Emmanuel@Carbone-Station MINGW64 ~/labsIH/lab-bash/lorem-copy (master)
+$ ls
+at.txt  at.txte  dummy_file.txt  sed.txt
